@@ -26,12 +26,12 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/create"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/form"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/sundonghui/pdfcpu/pkg/log"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/create"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/form"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/model"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 var (

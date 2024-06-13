@@ -23,10 +23,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/primitives"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/model"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/primitives"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 // Header represents form meta data.
