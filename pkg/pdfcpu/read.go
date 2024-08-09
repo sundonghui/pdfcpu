@@ -26,12 +26,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/filter"
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/scan"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/sundonghui/pdfcpu/pkg/filter"
+	"github.com/sundonghui/pdfcpu/pkg/log"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/model"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/scan"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 const (
@@ -172,6 +172,8 @@ func offsetLastXRefSection(ctx *model.Context, skip int64) (*int64, error) {
 
 		off, err := rs.Seek(-int64(i)*bufSize-skip, io.SeekEnd)
 		if err != nil {
+			// SDH refactor
+			continue
 			return nil, errors.New("pdfcpu: can't find last xref section")
 		}
 

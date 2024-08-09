@@ -19,7 +19,7 @@ package main
 import (
 	"flag"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
+	"github.com/sundonghui/pdfcpu/pkg/log"
 )
 
 func initAnnotsCmdMap() commandMap {

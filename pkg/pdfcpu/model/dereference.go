@@ -20,8 +20,8 @@ import (
 	"context"
 	"strings"
 
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 func processDictRefCounts(xRefTable *XRefTable, d types.Dict) {
@@ -253,10 +253,10 @@ func (xRefTable *XRefTable) DereferenceStringOrHexLiteral(obj types.Object, sinc
 		if s, err = types.HexLiteralToString(str); err != nil {
 			return "", err
 		}
-
+	case types.Object, types.Integer: // SDH refactor
+		return o.String(), nil
 	default:
 		return "", errors.Errorf("pdfcpu: dereferenceStringOrHexLiteral: wrong type %T", obj)
-
 	}
 
 	// Version check

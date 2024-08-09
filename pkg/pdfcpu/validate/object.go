@@ -21,10 +21,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
 	"github.com/pkg/errors"
+	"github.com/sundonghui/pdfcpu/pkg/log"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/model"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 const (
@@ -706,7 +706,8 @@ func validateNameEntry(xRefTable *model.XRefTable, d types.Dict, dictName, entry
 
 	name, ok := o.(types.Name)
 	if !ok {
-		return nil, errors.Errorf("pdfcpu: validateNameEntry: dict=%s entry=%s invalid type %T", dictName, entryName, o)
+		name = "null" // SDH refactor
+		//return nil, errors.Errorf("pdfcpu: validateNameEntry: dict=%s entry=%s invalid type %T", dictName, entryName, o)
 	}
 
 	// Validation
@@ -1049,7 +1050,7 @@ func decodeString(o types.Object, dictName, entryName string) (s string, err err
 		s, err = types.StringLiteralToString(o)
 	case types.HexLiteral:
 		s, err = types.HexLiteralToString(o)
-	case types.Integer:
+	case types.Integer: // SDH refactor
 		return o.String(), nil
 	default:
 		err = errors.Errorf("pdfcpu: decodeString: dict=%s entry=%s invalid type %T", dictName, entryName, o)

@@ -17,9 +17,9 @@ limitations under the License.
 package pdfcpu
 
 import (
-	"github.com/pdfcpu/pdfcpu/pkg/log"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/model"
-	"github.com/pdfcpu/pdfcpu/pkg/pdfcpu/types"
+	"github.com/sundonghui/pdfcpu/pkg/log"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/model"
+	"github.com/sundonghui/pdfcpu/pkg/pdfcpu/types"
 )
 
 func rotatePage(xRefTable *model.XRefTable, i, j int) error {
